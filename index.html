@@ -4,53 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./styles/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>https://www.meetup.com/</title>
 </head>
 
 <body>
     <header>
         <nav>
             <form>
-                <img src="./images/Link - Meetup logo.svg" alt="logo">
+                <img src="./assets/images/Link - Meetup logo.svg" class="logo" alt="logo">
                 <input class="item" placeholder="Search events" type="search">
-                <select id="region-select">
-                    <option value="Option1">Select a region</option> <!-- Пустая опция по умолчанию -->
-                </select>
+                <input class="region-select" type="search" placeholder="Neighborhood, city or zip">
                 <button>
-                    <img src="./images/Button - Search events.svg" alt="search_logo">
+                    <img src="./assets/images/Button - Search events.svg" class="search_logo" alt="search_logo">
                 </button>
             </form>
             <div class="nav-right">
-                <button class="btn-English"> <img src="./images/SVG.svg" alt="language-"> English
+                <button class="btn-English"> <img src="./assets/images/SVG.svg" alt="language"> English
                 </button>
-
-                <p class="link-login">Login</p>
+                <label for="Login">
+                    <p class="link-login">Login</p>
+                </label>
                 <button class="btn-signup">Sign up</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <div class="mb-2">
-            <h1>The people platform—Where
-                interests become friendships</h1>
-                <img class="imgp_people" src="./images/irl_event.svg fill.svg" alt="People">
-            <p class="p1">Whatever your interest, from hiking and reading to networking and skill sharing,
-                there are thousands of people who share it on Meetup. Events are happening
-                every day—sign up to join the fun.</p>
-                
-            <button class="meetup-btn">
-                Join Meetup
-            </button>
-            
+        <section class="intro">
+            <div class="text-content">
+                <h1>The people platform—Where interests become friendships</h1>
+                <p>Whatever your interest, from hiking and reading to networking and skill
+                    sharing,
+                    there are thousands of people who share it on Meetup. Events are happening
+                    every day—sign up to join the fun.
+                </p>
+                <button class="join-btn">Join Meetup</button>
+            </div>
+            <div class="image-content">
+                <img src="./assets/images/irl_event.svg fill.svg" alt="People riding a bike">
+            </div>
+        </section>
+        <!-- карточки  -->
+        <section class="doings">
+            <div class="location-selector">
+                <div>
+                    <h2> Events near</h2>
+                    <button class="location-selector-button">
+                        Mountain View, CA
+                        <img src="./assets/images/Vector.svg" alt="Pencil" />
+                    </button>
+                </div>
+            </div>
+        </section>
+        <div class="list-item">
+            <!-- <article class="event-card">
+                    <h3>Day Trading Idea and Strategy</h3>
+                    <p>Business (5 km)</p>
+                    <p>MON, MAR 18 - 7:00 PM PDT</p>
+                    <p>1 going | Free</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>Let's Talk Networking: JPMorgan Chase in Palo Alto</h3>
+                    <p>Business (25 km)</p>
+                    <p>TUE, MAR 19 - 5:00 PM PDT</p>
+                    <p>41 going | Free</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>Tech Talks & Quiz: Next-Gen Database Solutions</h3>
+                    <p>Technology</p>
+                    <p>WED, MAR 13 - 6:00 PM PDT</p>
+                    <p>40 going | Free</p>
+                </article> -->
         </div>
-        <div></div>
-        <div></div>
+
     </main>
+
 
     <!-- <footer>
         <ul>

@@ -5,30 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/css/style.css">
+    <script src="./scripts/postcards.js" defer></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
     <title>https://www.meetup.com/</title>
 </head>
 
 <body>
     <header>
-        <nav>
-            <form>
-                <img src="./assets/images/Link - Meetup logo.svg" class="logo" alt="logo">
-                <input class="item" placeholder="Search events" type="search">
-                <input class="region-select" type="search" placeholder="Neighborhood, city or zip">
-                <button>
-                    <img src="./assets/images/Button - Search events.svg" class="search_logo" alt="search_logo">
-                </button>
-            </form>
+            <div class="top">
+                <form class="form-left">
+                    <img src="./assets/images/icons/Link - Meetup logo.svg" class="logo" alt="logo">
+                    <input class="item" placeholder="Search events" type="search">
+                    <input class="region-select" type="search" placeholder="Neighborhood, city or zip" value="Mountain view, CA">
+                    <button>
+                        <img src="./assets/images/icons/Button - Search events.svg" class="search_logo" alt="search_logo">
+                    </button>
+                </form>
+            </div>
             <div class="nav-right">
-                <button class="btn-English"> <img src="./assets/images/SVG.svg" alt="language"> English
+                <button class="btn-English"> <img src="./assets/images/icons/SVG.svg" alt="language"> English
                 </button>
                 <label for="Login">
                     <p class="link-login">Login</p>
                 </label>
                 <button class="btn-signup">Sign up</button>
             </div>
-        </nav>
     </header>
 
     <main>
@@ -43,48 +45,41 @@
                 <button class="join-btn">Join Meetup</button>
             </div>
             <div class="image-content">
-                <img src="./assets/images/irl_event.svg fill.svg" alt="People riding a bike">
+                <img src="./assets/images/icons/irl_event.svg fill.svg" alt="People riding a bike">
             </div>
         </section>
-        <!-- карточки  -->
-        <section class="doings">
+        <section class="events">
+            
             <div class="location-selector">
+                
                 <div>
                     <h2> Events near</h2>
-                    <button class="location-selector-button">
-                        Mountain View, CA
-                        <img src="./assets/images/Vector.svg" alt="Pencil" />
-                    </button>
+                    
+                    <a href="#">Mountain View, CA
+                        <img src="./assets/images/icons/Vector.svg" alt="Pencil" /></a>
+                    </div>
+                    <a href="#">See all events</a>
                 </div>
+                
+                <div id="events-near"></div>
+             
             </div>
-        </section>
-        <div class="list-item">
-            <!-- <article class="event-card">
-                    <h3>Day Trading Idea and Strategy</h3>
-                    <p>Business (5 km)</p>
-                    <p>MON, MAR 18 - 7:00 PM PDT</p>
-                    <p>1 going | Free</p>
-                </article>
-
-                <article class="event-card">
-                    <h3>Let's Talk Networking: JPMorgan Chase in Palo Alto</h3>
-                    <p>Business (25 km)</p>
-                    <p>TUE, MAR 19 - 5:00 PM PDT</p>
-                    <p>41 going | Free</p>
-                </article>
-
-                <article class="event-card">
-                    <h3>Tech Talks & Quiz: Next-Gen Database Solutions</h3>
-                    <p>Technology</p>
-                    <p>WED, MAR 13 - 6:00 PM PDT</p>
-                    <p>40 going | Free</p>
-                </article> -->
         </div>
+    </section>
+    
+        <section class="online-events">
+            <div class="top">
+                <h2>Upcoming online events</h2>
+                <a href="#">See all events</a>
+            </div>
+            <div id="online-events-cards"></div>
+        </section>
+        <div id="list-item"></div>
 
     </main>
 
-
-    <!-- <footer>
+<!-- футер -->
+    <footer>
         <ul>
             <li>Your Account</li>
             <li>Sign up</li>
@@ -111,7 +106,7 @@
             <li>Apps</li>
             <li>Podcast</li>
         </ul>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

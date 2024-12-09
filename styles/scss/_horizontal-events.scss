@@ -1,0 +1,52 @@
+$border-color: #d9d9d9;
+$light-color: #707070;
+$dark-color: #7c6f50;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-size-small: 14px;
+$font-size-medium: 16px;
+
+.h-card {
+    display: flex;
+    border-top: 1px solid $border-color;
+    padding-top: 16px;
+    margin-bottom: 28px;
+
+    &>img {
+        height: 105px;
+        width: 159px;
+        border-radius: 8px;
+        margin-right: 12px;
+    }
+
+    &>.info {
+        &>.date {
+            color: $dark-color;
+            font-weight: $font-weight-medium;
+            font-size: $font-size-small;
+            letter-spacing: -0.35px;
+        }
+
+        &>h4 {
+            font-size: $font-size-medium;
+            font-weight: $font-weight-medium;
+            margin-top: 4px;
+        }
+
+        &>.category {
+            color: $light-color;
+            font-size: $font-size-small;
+        }
+
+        &>.attendees {
+            color: $light-color;
+            font-weight: $font-weight-normal;
+            font-size: $font-size-small;
+            margin-top: 48px;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 100px;
+    }
+}

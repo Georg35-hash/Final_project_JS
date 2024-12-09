@@ -1,0 +1,66 @@
+
+.events {
+
+    // Блок выбора локации
+    .location-selector {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 122.5px;
+        margin-bottom: 24px;
+
+
+        // Левый блок с заголовком и локацией
+        div {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                margin: 0;
+                font-size: 24px;
+                font-weight: bold;
+                color: #212121;
+            }
+
+            a {
+                color: #00798a;
+                background-color: #97cad11f;
+                text-decoration: none;
+                padding: 11px 12px;
+                margin-left: 20px;
+                border-radius: 8px;
+
+                img {
+                    margin-left: 8px;
+                    height: 16px;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        // Правая ссылка "See all events"
+        >a {
+            color: #00798a;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // Медиа-запрос для адаптивности
+    @media screen and (max-width: 1100px) {
+        .location-selector {
+            flex-direction: column;
+            align-items: flex-start;
+
+            >a {
+                margin-top: 12px;
+            }
+        }
+    }
+}

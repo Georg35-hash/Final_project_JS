@@ -1,19 +1,20 @@
-
+@use './reset';
 @use "./footer";
 @use "./navbar";
 @use "./intro";
-@use "./doings.scss";
-* {
-    padding: 0px;
-    margin: 0px;
-    font-family: "Roboto", sans-serif;
-  }
+@use "./events";
+@use "./online-events";
+@use "./vertical-events";
+@use "./horizontal-events.scss";
+
+
+button:hover {
   
-  button:hover {
-    cursor: pointer;
-  }
-  
-  main > * {
-    max-width: 1192px;
-    margin: 0px auto;
-  }
+  cursor: pointer;
+}
+
+
+main>* {
+  max-width: 1192px;
+  margin: 0px auto;
+}

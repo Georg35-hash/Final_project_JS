@@ -5,7 +5,7 @@ header {
     padding-top: 11px;
     padding-left: 24px;
 
-    .top {
+    .top-header {
         display: flex;
         align-items: center;
 
@@ -51,6 +51,7 @@ header {
                 align-items: center;
                 justify-content: center;
 
+
                 .search_logo {
                     height: 42px;
                     width: 42px;
@@ -73,9 +74,8 @@ header {
             color: #212121;
             margin-right: 12px;
 
-
             img {
-                height: 16px;
+                height: 20px;
                 margin-right: 8px;
             }
         }

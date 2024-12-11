@@ -1,0 +1,41 @@
+#cities {
+    margin-top: 64px;
+
+    // Стиль для текста-описания под заголовком
+    >p {
+        color: #707070;
+        font-weight: 400;
+        margin-top: 16px;
+    }
+
+    // Контейнер для городов
+    #popular-cities {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+        margin-top: 28px;
+
+        // Карточки городов
+        .city {
+            text-align: center;
+
+            // Заголовок города
+            h3 {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    // // Адаптивность для экранов меньше 1030px
+    // @media screen and (max-width: 1030px) {
+
+    //     // Скрываем последний элемент-город
+    //     #popular-cities {
+    //         .city:last-child {
+    //             display: none;
+    //         }
+    //     }
+
+    //     // Уменьшаем отступы для всей секции
+    //     padding: 0 15px;
+    // }
+}

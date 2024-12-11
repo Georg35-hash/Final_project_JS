@@ -1,8 +1,124 @@
 footer {
-    display: flex;
-    justify-content: center;
     background-color: #212121;
-    width: 100%;
-    height: 559px;
-    color: white;
+    padding: 24px 18px 40px;
+
+    a {
+        font-weight: 400;
+        font-size: 14px;
+        color: #c5c4c4;
+        text-decoration: none;
+        line-height: 20px;
+    }
+
+    >div {
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+
+    >.top {
+        display: flex;
+        height: 69px;
+        border-bottom: 1px solid #707070;
+
+        h5 {
+            display: flex;
+            color: #f6f7f8;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+            height: 44px;
+            align-items: center;
+        }
+
+        button {
+            color: white;
+            background-color: #212121;
+            width: 119px;
+            height: 44px;
+            border: 2px solid white;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: 16px;
+            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+            &:hover {
+                color: #212121;
+                background-color: white;
+            }
+        }
+    }
+
+    >.links {
+        display: flex;
+
+        >div {
+            height: 224px;
+            width: 33%;
+            margin: 24px auto 0;
+
+            h6 {
+                font-weight: 400;
+                font-size: 16px;
+                color: #f6f7f8;
+            }
+
+            ul {
+                list-style: none;
+            }
+        }
+    }
+
+    >.social-media {
+        margin-top: 24px;
+        display: flex;
+
+        >.follow {
+            width: 278px;
+
+            h6 {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                color: #f6f7f8;
+            }
+
+            .links {
+                margin-top: 12px;
+                display: flex;
+
+                a {
+                    margin: 0 auto;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        >.install {
+            margin: auto 0 auto auto;
+        }
+    }
+
+    >.bottom {
+        margin-top: 24px;
+
+        >* {
+            margin: 0 24px;
+        }
+
+        >span {
+            margin-left: 0;
+            color: white;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
 }

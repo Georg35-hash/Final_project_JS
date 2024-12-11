@@ -3,18 +3,22 @@
 @use "./navbar";
 @use "./intro";
 @use "./events";
-@use "./online-events";
 @use "./vertical-events";
-@use "./horizontal-events.scss";
-
+@use "./horizontal-events";
+@use "./join";
+@use "./categories";
+@use './cities';
+@use "./how_meetup_works";
+@use "./articles";
+@use "./find-out-events";
 
 button:hover {
-  
+
   cursor: pointer;
 }
 
 
-main>* {
-  max-width: 1192px;
+main {
+  max-width: 1196px;
   margin: 0px auto;
 }

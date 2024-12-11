@@ -64,6 +64,26 @@ const eventsStore = [
         category: "Health and Wellbeing",
         distance: 15,
     },
+    {
+        title: "All Nations - Manhattan Missions Church Bible Study",
+        description: "Manhattan Bible Study Meetup Group",
+        date: new Date(2024, 2, 14, 11),
+        image:
+            "https://plus.unsplash.com/premium_photo-1679488248784-65a638a3d3fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "offline",
+        category: "Health and Wellbeing",
+        distance: 15,
+    },
+    {
+        title: "All Nations - Manhattan Missions Church Bible Study",
+        description: "Manhattan Bible Study Meetup Group",
+        date: new Date(2024, 2, 14, 11),
+        image:
+            "https://plus.unsplash.com/premium_photo-1679488248784-65a638a3d3fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "offline",
+        category: "Health and Wellbeing",
+        distance: 15,
+    },
 ];
 
 
@@ -75,83 +95,10 @@ const eventsStore = [
 
 
 
-const itemList = document.getElementById('events-near'); // Находим контейнер
-
-// Проходимся по всем данным
-for (const event of eventsStore) {
-    const date = new Date(event.date);
-    
-    let options = {
-        weekday: 'short',  // Сокращённый день недели (например, SUN)
-        month: 'short',    // Сокращённый месяц (например, MAR)
-        day: '2-digit',    // Два числа для дня месяца (например, 23)
-        hour: '2-digit',   // Часы
-        minute: '2-digit', // Минуты
-        timeZoneName: 'short', // Часовой пояс (например, UTC)
-        timeZone: 'UTC'    // Указываем, что нужно использовать UTC
-    };
-
-    // Форматируем дату с указанным временем в UTC
-    const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
-    
-    // Преобразуем всю строку в верхний регистр
-    const upperCaseDate = formattedDate.toUpperCase();
-
-    // Создаем финальную строку с символом "•"
-    const formattedString = upperCaseDate.replace(',' , ' •');
-
-    const div = document.createElement('div');
-
-
-
-    div.innerHTML = `
-    <div class="v-card">
-        <div class="cover" style="background-image: url('${event.image}'); background-size: cover;">
-            <p class="type"><img src="/assets/images/icons/Camera.svg" alt="Camera"> Online Event</p>
-        </div>
-        <div class="info">
-            <h4>${event.title}</h4>
-            <p class="category">${event.category} (${event.distance} km)</p>
-            <p class="date"><img src="/assets/images/icons/Calendar.svg" alt="Calendar"> ${formattedString}</p>
-            <div style="display: flex;">
-                <span class="attendees">
-                    <img src="/assets/images/icons/CheckMark.svg" alt="CheckMark"> 
-                    ${event.attendees ? `${event.attendees} attendees` : ''}
-                </span>
-                <span class="cost" ${
-                    event.attendees ? "style='margin-left: 16px;'" : ""
-                  }>
-                    <img src="/assets/images/icons/Ticket.svg" alt="Ticket"> Free
-                </span>
-            </div>
-        </div>
-    </div>
-    `;
-
-    // Проверяем наличие участников
-    const attendeesElement = div.querySelector('.attendees');
-    if (!event.attendees) {
-        attendeesElement.style.display = 'none'; // Скрываем, если участников нет
-    }
-
-    itemList.appendChild(div);
-}
-
-
-
-
-
-
-
-
-
-// const itemListOnline = document.getElementById('online-events-cards'); // Находим контейнер
-
-// let cardCount = 0; // Счётчик карточек
+// const itemList = document.getElementById('events-near'); // Находим контейнер
 
 // // Проходимся по всем данным
-// for (const event of eventsStore) {
-//     if (cardCount >= 3) break; // Прерываем цикл, если уже добавлено 3 карточки
+// for (let event of eventsStore) {
 
 //     const date = new Date(event.date);
     
@@ -175,6 +122,8 @@ for (const event of eventsStore) {
 //     const formattedString = upperCaseDate.replace(',' , ' •');
 
 //     const div = document.createElement('div');
+
+
 
 //     div.innerHTML = `
 //     <div class="v-card">
@@ -206,60 +155,160 @@ for (const event of eventsStore) {
 //         attendeesElement.style.display = 'none'; // Скрываем, если участников нет
 //     }
 
-//     itemListOnline.appendChild(div);
+//     itemList.appendChild(div);
 
-//     cardCount++; // Увеличиваем счётчик карточек
+
+
+//     const typeOF = div.querySelector('.type');
+//     if (event.type == 'offline') {
+//         typeOF.style.display = 'none'; // Скрываем, если offline
+//     }
+
+//     itemList.appendChild(div);
 // }
 
 
+function renderEvents() {
+    const itemList = document.getElementById('events-near'); // Находим контейнер
+
+    // Проходимся по всем данным
+    for (let event of eventsStore) {
+        const date = new Date(event.date);
+
+        let options = {
+            weekday: 'short',  // Сокращённый день недели (например, SUN)
+            month: 'short',    // Сокращённый месяц (например, MAR)
+            day: '2-digit',    // Два числа для дня месяца (например, 23)
+            hour: '2-digit',   // Часы
+            minute: '2-digit', // Минуты
+            timeZoneName: 'short', // Часовой пояс (например, UTC)
+            timeZone: 'UTC'    // Указываем, что нужно использовать UTC
+        };
+
+        // Форматируем дату с указанным временем в UTC
+        const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
+
+        // Преобразуем всю строку в верхний регистр
+        const upperCaseDate = formattedDate.toUpperCase();
+
+        // Создаем финальную строку с символом "•"
+        const formattedString = upperCaseDate.replace(',', ' •');
+
+        const div = document.createElement('div');
+
+        div.innerHTML = `
+        <div class="v-card">
+            <div class="cover" style="background-image: url('${event.image}'); background-size: cover;">
+                <p class="type"><img src="/assets/images/icons/Camera.svg" alt="Camera"> Online Event</p>
+            </div>
+            <div class="info">
+                <h4>${event.title}</h4>
+                <p class="category">${event.category} (${event.distance} km)</p>
+                <p class="date"><img src="/assets/images/icons/Calendar.svg" alt="Calendar"> ${formattedString}</p>
+                <div style="display: flex;">
+                    <span class="attendees">
+                        <img src="/assets/images/icons/CheckMark.svg" alt="CheckMark"> 
+                        ${event.attendees ? `${event.attendees} attendees` : ''}
+                    </span>
+                    <span class="cost" ${
+                        event.attendees ? "style='margin-left: 16px;'" : ""
+                    }>
+                        <img src="/assets/images/icons/Ticket.svg" alt="Ticket"> Free
+                    </span>
+                </div>
+            </div>
+        </div>
+        `;
+
+        // Проверяем наличие участников
+        const attendeesElement = div.querySelector('.attendees');
+        if (!event.attendees) {
+            attendeesElement.style.display = 'none'; // Скрываем, если участников нет
+        }
+
+        itemList.appendChild(div);
+
+        const typeOF = div.querySelector('.type');
+        if (event.type == 'offline') {
+            typeOF.style.display = 'none'; // Скрываем, если offline
+        }
+
+        itemList.appendChild(div);
+    }
+}
+
+function renderUpcomingEvents() {
+    const itemListOnline = document.getElementById('online-events-cards'); // Находим контейнер
+    let count = 0; // Счётчик для ограничения количества постов
+
+    // Проходимся по всем данным
+    for (let event of eventsStore) {
+        if (count >= 3) break; // Останавливаем цикл, если постов уже 3
+
+        const date = new Date(event.date);
+
+        let options = {
+            weekday: 'short',  // Сокращённый день недели (например, SUN)
+            month: 'short',    // Сокращённый месяц (например, MAR)
+            day: '2-digit',    // Два числа для дня месяца (например, 23)
+            hour: '2-digit',   // Часы
+            minute: '2-digit', // Минуты
+            timeZoneName: 'short', // Часовой пояс (например, UTC)
+            timeZone: 'UTC'    // Указываем, что нужно использовать UTC
+        };
+
+        // Форматируем дату с указанным временем в UTC
+        const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
+
+        // Преобразуем всю строку в верхний регистр
+        const upperCaseDate = formattedDate.toUpperCase();
+
+        // Создаем финальную строку с символом "•"
+        const formattedString = upperCaseDate.replace('•', ' ,');
+
+        const div = document.createElement('div');
+
+        div.innerHTML = `
+        <div class="v-card">
+            <div class="cover" style="background-image: url('${event.image}'); background-size: cover;">
+                <p class="type"><img src="/assets/images/icons/Camera.svg" alt="Camera"> Online Event</p>
+            </div>
+            <div class="info">
+                <h4>${event.title}</h4>
+                <p class="category">${event.category} (${event.distance} km)</p>
+                <p class="date"><img src="/assets/images/icons/Calendar.svg" alt="Calendar"> ${formattedString}</p>
+                <div style="display: flex;">
+                    <span class="attendees">
+                        <img src="/assets/images/icons/CheckMark.svg" alt="CheckMark"> 
+                        ${event.attendees ? `${event.attendees} attendees` : ''}
+                    </span>
+                    <span class="cost" ${event.attendees ? "style='margin-left: 16px;'" : ""}>
+                        <img src="/assets/images/icons/Ticket.svg" alt="Ticket"> Free
+                    </span>
+                </div>
+            </div>
+        </div>
+        `;
+
+        // Проверяем наличие участников
+        const attendeesElement = div.querySelector('.attendees');
+        if (!event.attendees) {
+            attendeesElement.style.display = 'none'; // Скрываем, если участников нет
+        }
+
+        itemListOnline.appendChild(div);
+
+        count++; // Увеличиваем счётчик
+    }
+}
 
 
 
+// Вызываем функцию renderEvents
+renderEvents();
+
+// Вызываем функцию renderUpcomingEvents
+renderUpcomingEvents();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for (const event of eventsStore) {
-    //     const div = document.createElement('div');
-    //     div.classList.add('v-card');
-    
-    //     div.innerHTML = `
-    //         <div class="cover" style="background-image: url('${event.image}');">
-    //             ${event.type === "online" ? '<p class="type"><img src="/assets/images/icons/Camera.svg" alt="Online event"> Online Event</p>' : ""}
-    //         </div>
-    //         <div class="content">
-    //             <h3 class="event-title">${event.title}</h3>
-    //             <p class="event-description">${event.description}</p>
-    //             <p class="event-category">Category: ${event.category}</p>
-    //             <p class="event-distance">Distance: ${event.distance} km</p>
-    //         </div>
-    //     `;
-    
-    //     Itemlist.appendChild(div);
-    // }
-    
-   
-    
-    // div.innerHTML = `  <div class="h-card">
-    //         <img src="${event.image}" alt="cover">
-    //         <div class="info">
-    //             <p class="date">${event.date}</p>
-    //             <h4>${event.title}</h4>
-    //             <p class="category">${event.category} (${event.distance} km)</p>
-    //             <p class="attendees">${event.attendees ? event.attendees : ""} ${event.attendees ? "attendees" : ""}</p>
-    //         </div>
-    //     </div>`;

@@ -6,9 +6,11 @@ $dark-color: #212121;
 
 
 
-#events-near, #online-events {
+#events-near, #online-events-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  column-gap: 36px; /* Отступ только между колонками */
+
 
 
 .v-card {

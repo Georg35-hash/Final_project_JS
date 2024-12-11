@@ -8,10 +8,9 @@ $font-size-medium: 16px;
 
 .h-card {
     display: flex;
-    border-top: 1px solid $border-color;
+    border-top:1px solid $border-color ;
     padding-top: 16px;
     margin-bottom: 28px;
-
     &>img {
         height: 105px;
         width: 159px;
@@ -31,11 +30,13 @@ $font-size-medium: 16px;
             font-size: $font-size-medium;
             font-weight: $font-weight-medium;
             margin-top: 4px;
+
         }
 
         &>.category {
             color: $light-color;
             font-size: $font-size-small;
+
         }
 
         &>.attendees {
@@ -44,9 +45,8 @@ $font-size-medium: 16px;
             font-size: $font-size-small;
             margin-top: 48px;
         }
+
     }
 
-    &:last-child {
-        margin-bottom: 100px;
-    }
+    
 }

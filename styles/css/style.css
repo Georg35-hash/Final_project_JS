@@ -372,7 +372,6 @@ header .nav-right .btn-signup:hover {
 
 .h-card {
   display: flex;
-  border-top: 1px solid #d9d9d9;
   padding-top: 16px;
   margin-bottom: 28px;
 }
@@ -633,16 +632,21 @@ header .nav-right .btn-signup:hover {
 }
 
 #find-out-events {
+  display: flex;
+  justify-content: space-between;
   margin-top: 81px;
 }
-#find-out-events > h3 {
+#find-out-events .events {
+  width: 60%;
+}
+#find-out-events .events > h3 {
   margin-top: 16px;
   margin-bottom: 4px;
   color: #00798A;
   padding-bottom: 4px;
   position: relative;
 }
-#find-out-events > h3::after {
+#find-out-events .events > h3::after {
   content: "";
   position: absolute;
   transform: translateX(-98%);
@@ -651,16 +655,18 @@ header .nav-right .btn-signup:hover {
   height: 4px;
   background-color: #00798A;
 }
-#find-out-events .selects {
+#find-out-events .events .selects {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   margin-top: 12px;
   margin-bottom: 56px;
 }
-#find-out-events .selects select {
+#find-out-events .events .selects select {
   appearance: none;
   background-color: #f6f7f8;
   border: none;
   height: 46px;
-  width: 200px;
   padding: 0 40px 0 16px;
   border-radius: 40px;
   font-size: 14px;
@@ -671,38 +677,47 @@ header .nav-right .btn-signup:hover {
   background-position: right 16px center;
   background-size: 10px 10px;
 }
-#find-out-events #map > div {
-  margin-top: 14px;
-  width: 350px;
-  height: 285px;
-  background-image: url("/assets/images/NewYorkMap.jpg");
-  background-size: cover; /* Обеспечивает, что изображение карты будет полностью покрывать контейнер */
-  background-position: center; /* Центрирует изображение */
-  position: relative; /* Для корректного позиционирования вложенных элементов */
-  border-radius: 10px; /* Слегка округленные углы для более плавного вида */
+#find-out-events .events .reseter {
+  background: transparent;
+  border: none;
 }
-#find-out-events #map > div .top {
+#find-out-events #map {
+  width: 35%;
+  margin-left: 20px;
+}
+#find-out-events #map h3 {
+  font-size: 12px;
+}
+#find-out-events #map h2 {
+  margin-top: 8px;
+  color: #000;
+}
+#find-out-events #map .map-container {
+  margin-top: 14px;
+  width: 100%;
+  height: 285px;
+  width: 350px;
+  background-image: url("/assets/images/NewYorkMap.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#find-out-events #map .map-container .top {
   display: flex;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 15px 15px;
 }
-#find-out-events #map > div .top button {
+#find-out-events #map .map-container .top button {
   background-color: white;
   width: 15px;
   height: 15px;
   border: none;
-  border-radius: 50%; /* Круглая форма кнопки */
-  cursor: pointer; /* Показывает, что кнопка интерактивная */
 }
-#find-out-events #map > div .bottom {
+#find-out-events #map .map-container .bottom {
   height: 240px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Выравнивание кнопки к верхней части */
-  padding-top: 50px; /* Отступ от верхней части карты */
-  width: 100%; /* Обеспечивает, чтобы кнопка полностью помещалась */
 }
-#find-out-events #map > div .bottom button {
+#find-out-events #map .map-container .bottom button {
   height: 40px;
   width: 172px;
   border: 2px solid #00798a;
@@ -715,18 +730,21 @@ header .nav-right .btn-signup:hover {
   color: #00798a;
   font-weight: 500;
   margin-top: 77.5px;
-  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
-#find-out-events #map > div .bottom button > img {
+#find-out-events #map .map-container .bottom button > img {
   margin-left: 8px;
 }
-#find-out-events #map > div .bottom button:hover {
+#find-out-events #map .map-container .bottom button:hover {
   width: 200px;
-  background-color: #eaf6f6; /* Добавляет мягкий эффект при наведении */
 }
 @media screen and (max-width: 1050px) {
   #find-out-events #map {
-    display: none; /* Скрывает карту на маленьких экранах */
+    display: none;
+  }
+  #find-out-events .events {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 

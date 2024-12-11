@@ -66,28 +66,45 @@ const eventsStore = [
         distance: 15,
     },
 
-    
+
 ];
 
+// Найдем кнопку сброса и все select элементы
+const reseterButton = document.querySelector('.reseter');
+const selects = document.querySelectorAll('.selects select');
 
+// Добавим обработчик события на кнопку сброса
+reseterButton.addEventListener('click', (event) => {
+    // Предотвратить стандартное действие кнопки, если оно есть 
+    event.preventDefault();
 
+    // Сбросим значения всех select элементов в их первоначальное состояние
+    selects.forEach(select => {
+        select.value = 'all'; // Устанавливаем значение 'all' для всех фильтров
+    });
+
+    // Вызываем функцию для фильтрации событий после сброса
+    filterEvents();
+});
 
 function filterEvents() {
-    const categoryFilter = document.getElementById('filterCategory').value;
-    const typeFilter = document.getElementById('filterType').value;
-    const distanceFilter = document.getElementById('filterlterDistance').value
-    const dayFilter = document.getElementById('filterDay').value
+    const categoryFilter = document.getElementById('filterCategory').value.toLowerCase();
+    const typeFilter = document.getElementById('filterType').value.toLowerCase();
+    const distanceFilter = document.getElementById('filterDistance').value.toLowerCase();
+    const dayFilter = document.getElementById('filterDay').value;
 
     const filteredEvents = eventsStore.filter(event => {
-        const category = categoryFilter === 'all' || event.category === categoryFilter;
-        const type = typeFilter === 'all' || event.type === typeFilter;
-        const distance = distanceFilter === 'all' || event.distance >= parseFloat(distanceFilter);
+        const matchesCategory = categoryFilter === 'all' || event.category.toLowerCase() === categoryFilter;
+        const matchesType = typeFilter === 'all' || event.type.toLowerCase() === typeFilter;
 
-        // Фильтрация по дате
-        const day =
-        !dayFilterValue || new Date(dayFilter).getTime() === event.date.getTime()
-        
-        return category && type && distance && day;
+        // Фильтрация расстояния
+        const matchesDistance = distanceFilter === 'all' || event.distance <= parseFloat(distanceFilter);
+
+        // Парсим дату из dayFilter для сравнения
+        const matchesDate = !dayFilter || dayFilter === 'all' ||
+            new Date(dayFilter).getTime() === event.date.getTime();
+
+        return matchesCategory && matchesType && matchesDistance && matchesDate;
     });
 
     renderEvents(filteredEvents);
@@ -101,7 +118,7 @@ function renderEvents(events) {
     eventsList.innerHTML = '';  // Очистить текущий список
 
     if (events.length === 0) {
-        eventsList.innerHTML = '<p class="Error">No events found matching your filters.</p>';
+        eventsList.innerHTML = '<p class="Error"> No events found matching your filters. </p>';
         return;
     }
 
@@ -127,23 +144,19 @@ function renderEvents(events) {
         // Создаем финальную строку с символом "•"
         const formattedString = upperCaseDate.replace(',', ' •');
 
-
         const eventItem = document.createElement('div');
         eventItem.classList.add('h-card');
-        eventItem.innerHTML =    `
-        
-        <div class="h-card">
-    <img src="${event.image}" alt="cover">
-    <div class="info">
-        <p class="date">${formattedString}</p>
-        <h4>${event.title}</h4>
-        <p class="category">${event.category} (${event.distance
-            } km)</p>
-            
-        <p class="attendees">${event.attendees ? event.attendees : ""
-            } ${event.attendees ? "attendees" : ""}</p>
-    </div>
-</div>`;
+        eventItem.innerHTML = `
+            <div class="h-card">
+                <img src="${event.image}" alt="cover">
+                <div class="info">
+                    <p class="date">${formattedString}</p>
+                    <h4>${event.title}</h4>
+                    <p class="category">${event.category} (${event.distance} km)</p>
+                    <p class="attendees">${event.attendees ? event.attendees : ""} ${event.attendees ? "attendees" : ""}</p>
+                </div>
+            </div>
+        `;
 
         eventsList.appendChild(eventItem);
     });

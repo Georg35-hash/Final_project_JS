@@ -1,19 +1,24 @@
-
+@use './reset';
 @use "./footer";
 @use "./navbar";
 @use "./intro";
-@use "./doings.scss";
-* {
-    padding: 0px;
-    margin: 0px;
-    font-family: "Roboto", sans-serif;
-  }
-  
-  button:hover {
-    cursor: pointer;
-  }
-  
-  main > * {
-    max-width: 1192px;
-    margin: 0px auto;
-  }
+@use "./events";
+@use "./vertical-events";
+@use "./horizontal-events";
+@use "./join";
+@use "./categories";
+@use './cities';
+@use "./how_meetup_works";
+@use "./articles";
+@use "./find-out-events";
+
+button:hover {
+
+  cursor: pointer;
+}
+
+
+main > *{
+  max-width: 1196px;
+  margin: 0px auto;
+}

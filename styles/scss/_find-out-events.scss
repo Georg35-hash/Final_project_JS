@@ -1,0 +1,132 @@
+#find-out-events {
+    display: flex;
+    justify-content: space-between;
+
+    .events {
+        width: 60%; // Задаём ширину для секции с событиями
+
+        >h3 {
+            margin-top: 16px;
+            margin-bottom: 4px;
+            color: #00798A;
+            padding-bottom: 4px; // Отступ от текста до линии
+            position: relative; // Для позиционирования псевдоэлемента
+
+            &::after {
+                content: '';
+                position: absolute;
+                transform: translateX(-96%);
+                bottom: 0;
+                width: 60px;
+                height: 4px;
+                background-color: #00798A;
+            }
+        }
+
+        .selects {
+            display: flex;
+            gap: 10px; // Расстояние между элементами
+            
+            margin-top: 12px;
+            margin-bottom: 56px;
+
+            select {
+                appearance: none;
+                background-color: #f6f7f8;
+                border: none;
+                height: 46px;
+                padding: 0 40px 0 16px;
+                border-radius: 40px;
+                font-size: 14px;
+                color: #000;
+                cursor: pointer;
+                background-image: url('/assets/images/icons/Vector1.svg');
+                background-repeat: no-repeat;
+                background-position: right 16px center;
+                background-size: 10px 10px;
+            }
+        }
+
+        & .reseter {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    #map {
+        width: 35%; // Задаём ширину для карты
+        margin-left: 20px; // Отступ между секциями
+
+        h3 {
+            font-size: 12px;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        .map-container {
+            margin-top: 14px;
+            border-radius: 12px;
+            height: 285px;
+            width: 350px;
+            background-image: url("/assets/images/NewYorkMap.jpg");
+            background-size: cover;
+            background-position: center;
+
+            .top {
+                display: flex;
+                justify-content: flex-end;
+                padding: 15px 15px;
+
+                button {
+                    background-color: white;
+                    width: 15px;
+                    height: 15px;
+                    border: none;
+                }
+            }
+
+            .bottom {
+                height: 240px;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    height: 40px;
+                    width: 172px;
+                    border: 2px solid #00798a;
+                    border-radius: 8px;
+                    background-color: white;
+                    font-size: 14px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #00798a;
+                    font-weight: 500;
+                    margin-top: 77.5px;
+                    transition: width 0.3s ease-in-out;
+                }
+
+                button>img {
+                    margin-left: 8px;
+                }
+
+                button:hover {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1050px) {
+        #map {
+            display: none;
+        }
+
+        .events {
+            width: 100%; // Секции с событиями занимают всю ширину на меньших экранах
+            margin-bottom: 20px; // Отступ снизу для мобильных
+        }
+    }
+}

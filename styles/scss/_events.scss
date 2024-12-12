@@ -1,0 +1,69 @@
+$border-color: #d9d9d9;
+$light-color: #707070;
+$dark-color: #7c6f50;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-size-small: 14px;
+$font-size-medium: 16px;
+
+
+.events {
+
+    .top {
+        margin-top: 122px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #212121;
+        }
+
+        // Локация (Mountain View) – первая ссылка
+        >a:first-of-type {
+            display: flex;
+            align-items: center;
+            color: #00798a;
+            background-color: #97cad11f;
+            text-decoration: none;
+            padding: 11px 12px;
+            margin-left: 20px;
+            border-radius: 8px;
+
+            img {
+                margin-left: 8px;
+                height: 16px;
+            }
+
+
+        }
+
+        // Первая ссылка "See all events" для первого блока
+        >a:nth-of-type(2) {
+            color: #00798a;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: auto;
+
+            // &:hover {
+            //     text-decoration: underline;
+            // }
+        }
+
+        // Последняя ссылка "See all events" для второго блока
+        >a:last-of-type {
+            color: #00798a;
+            background: transparent;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: auto;
+
+        }
+    }
+
+   
+}

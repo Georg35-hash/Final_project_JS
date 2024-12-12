@@ -1,0 +1,94 @@
+// #categories {
+//     margin-top: 64px;
+
+//     .links {
+//         display: grid;
+//         grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+//         margin-top: 24px;
+       
+
+//         a {
+            
+//             max-width: 135px;
+//             height: 112px;
+//             background-color: #97cad114;
+//             color: #212121;
+//             border: none;
+//             font-weight: 500;
+//             font-size: 16px;
+//             line-height: 24px;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             text-decoration: none;
+//             text-align: center;
+
+//             img {
+//                 width: 20px;
+//                 margin: 0 auto;
+//             }
+//         }
+//     }
+
+//     @media screen and (max-width: 960px) {
+//         margin-top: 15px;
+//         padding: 0 15px;
+
+//         .links {
+//             a {
+//                 margin: 11px 23px;
+//             }
+//         }
+//     }
+// }
+
+#categories {
+    margin-top: 64px; /* Отступ сверху для блока категорий */
+
+
+    .links {
+        display: grid; /* Используем сетку для ссылок */
+        grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); /* Сетки с авто-адаптируемыми колонками */
+        gap: 16px; /* Расстояние между ссылками */
+        margin-top: 24px; /* Отступ сверху для блока с ссылками */
+
+        a {
+            display: flex; /* Используем флекс-бокс */
+            flex-direction: column; /* Размещаем элементы по вертикали */
+            align-items: center; /* Центрируем содержимое по горизонтали */
+            text-align: center; /* Выравниваем текст по центру */
+            background-color: #97cad114; /* Цвет фона для ссылок */
+            padding: 18px 16px; /* Отступы внутри ссылки */
+            border-radius: 8px; /* Скругляем углы */
+            text-decoration: none; /* Убираем подчеркивание текста */
+            color: #212121; /* Цвет текста */
+
+            img {
+                width: 20px; /* Ширина изображения */
+                height: 20px; /* Высота изображения */
+                margin-bottom: 6px; /* Отступ снизу для картинки */
+                object-fit: contain; /* Для сохранения пропорций изображения */
+            }
+
+            span {
+                font-size: 16px; /* Размер шрифта для текста */
+                line-height: 24px; /* Высота строки */
+                font-weight: 500; /* Полужирный шрифт */
+            }
+        }
+    }
+
+    /* Медиазапрос для экранов с шириной меньше 960px */
+    @media screen and (max-width: 960px) {
+        margin-top: 15px; /* Уменьшаем отступ сверху */
+        padding: 0 15px; /* Добавляем отступы по бокам для блока категорий */
+
+        .links {
+            gap: 12px; /* Уменьшаем расстояние между ссылками */
+        }
+
+        .links a {
+            padding: 16px 12px; /* Уменьшаем отступы внутри ссылок */
+        }
+    }
+}

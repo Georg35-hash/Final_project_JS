@@ -1,0 +1,67 @@
+#friendship-articles {
+    margin-top: 64px;
+    margin-bottom: 56px;
+
+    >h2 {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    >p {
+        margin-top: 16px;
+        max-width: 893px;
+        color: #707070;
+    }
+
+    >.articles {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 28px;
+
+        >.article {
+            max-width: 376px;
+
+            >h3 {
+                margin-top: 23px;
+                font-weight: 600;
+                font-size: 16px;
+            }
+
+            >p {
+                color: #707070;
+                line-height: 24px;
+                font-size: 12px;
+                margin-top: 12px;
+                margin-bottom: 16px;
+            }
+
+            >a {
+                color: #00798a;
+                text-decoration: none;
+                font-size: 12px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1150px) {
+        >h2 {
+            font-size: 20px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        >p {
+            display: none;
+        }
+
+        >.articles {
+            display: block;
+
+            >.article {
+                margin-bottom: 32px;
+            }
+        }
+    }
+}

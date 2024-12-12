@@ -1,14 +1,21 @@
+$border-color: #d9d9d9;
+$light-color: #707070;
+$dark-color: #7c6f50;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-size-small: 14px;
+$font-size-medium: 16px;
+
+
 .events {
 
-    // Блок выбора локации
     .top {
+        margin-top: 122px;
         display: flex;
-        justify-content: space-between; // Элементы выравниваются по началу
+        justify-content: space-between;
         align-items: center;
-
         margin-bottom: 24px;
 
-        // Левый блок с заголовком и локацией
         h2 {
             margin: 0;
             font-size: 24px;
@@ -16,7 +23,7 @@
             color: #212121;
         }
 
-        // Локация (Mountain View)
+        // Локация (Mountain View) – первая ссылка
         >a:first-of-type {
             display: flex;
             align-items: center;
@@ -24,7 +31,7 @@
             background-color: #97cad11f;
             text-decoration: none;
             padding: 11px 12px;
-            margin-left: 20px; // Убираем отступ между "Events near" и "Mountain View"
+            margin-left: 20px;
             border-radius: 8px;
 
             img {
@@ -32,48 +39,31 @@
                 height: 16px;
             }
 
-            &:hover {
-                text-decoration: underline;
-            }
+
         }
 
-        // Правая ссылка "See all events" (для первого блока)
-        >a:last-of-type {
+        // Первая ссылка "See all events" для первого блока
+        >a:nth-of-type(2) {
             color: #00798a;
             text-decoration: none;
             font-size: 14px;
-            margin-left: auto; // Сдвигаем "See all events" вправо
+            margin-left: auto;
 
-            &:hover {
-                text-decoration: underline;
-            }
+            // &:hover {
+            //     text-decoration: underline;
+            // }
+        }
+
+        // Последняя ссылка "See all events" для второго блока
+        >a:last-of-type {
+            color: #00798a;
+            background: transparent;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: auto;
+
         }
     }
 
-    // Для второго "See all events" (для второго блока .top)
-    .events .top a:last-of-type  {
-        color: #00798a;
-        text-decoration: none;
-        font-size: 14px;
-        margin-left: auto;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-}
-
-
-
-// Медиа-запрос для адаптивности
-@media screen and (max-width: 1100px) {
-    .top {
-        flex-direction: column;
-        align-items: flex-start;
-
-        >a {
-            margin-top: 12px;
-        }
-    }
+   
 }

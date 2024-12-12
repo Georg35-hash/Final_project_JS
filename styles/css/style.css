@@ -110,98 +110,158 @@ footer > .bottom > span {
 }
 
 header {
+  min-height: 64px;
   display: flex;
   align-items: center;
+}
+
+header > .top {
+  display: flex;
+  width: 100%;
   justify-content: space-between;
-  padding-top: 11px;
-  padding-left: 24px;
 }
-header .top-header {
+
+header > .top > .left {
   display: flex;
   align-items: center;
 }
-header .top-header .form-left {
-  display: flex;
-  align-items: center;
+
+header > .searcher > button > #search-icon-button {
+  width: 42px;
+  height: 42px;
 }
-header .top-header .form-left .logo {
+
+header > .top > .left > a {
   height: 34px;
-  margin-right: 24px;
 }
-header .top-header .form-left .item {
+
+header > .mobile {
+  display: none;
+}
+
+.searcher {
+  display: flex;
+}
+
+.searcher > input {
   height: 42px;
   width: 300px;
-  border: 1px solid #d9d9d9;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  padding: 10px 10px 10px 40px;
-  font-size: 16px;
-  background: url("/assets/images/icons/Search.svg") no-repeat left 10px center;
-  margin-right: -1px;
-}
-header .top-header .form-left .region-select {
-  height: 42px;
-  width: 254px;
   border: 1px solid #d9d9d9;
-  padding-left: 16px;
+  background-color: white;
+  font-weight: 400;
   font-size: 16px;
-  margin-right: -1px;
+  padding-left: 35px;
+  margin-left: 40px;
 }
-header .top-header .form-left button {
-  background-color: #f65858;
+
+.searcher > #search-icon {
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 11px;
+}
+
+.searcher > span {
+  width: 254px;
   height: 42px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  font-size: 16px;
+  padding-left: 17px;
+}
+
+.searcher > button {
+  background-color: #f65858;
   width: 42px;
+  height: 42px;
   border: none;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header .top-header .form-left button .search_logo {
-  height: 42px;
-  width: 42px;
-}
-header .nav-right {
-  display: flex;
-  align-items: center;
-  margin-left: 49.87px;
-}
-header .nav-right .btn-English {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  font-size: 14px;
-  color: #212121;
-  margin-right: 12px;
-}
-header .nav-right .btn-English img {
-  height: 20px;
-  margin-right: 8px;
-}
-header .nav-right .link-login {
-  margin-right: 12px;
-  font-size: 14px;
-  color: #212121;
-  transition: color 0.3s ease;
-}
-header .nav-right .link-login:hover {
-  color: #00798a;
-}
-header .nav-right .btn-signup {
-  background-color: #00798a;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 16px;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-header .nav-right .btn-signup:hover {
-  background-color: #005f6b;
 }
 
+header > .top > .right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+header > .top > .right > select {
+  background-color: white;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #212121;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+header > .top > .right > button {
+  width: 84px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+  margin: 0px 6px;
+}
+
+header > .top > .right > #login {
+  background-color: white;
+  color: #212121;
+}
+
+header > .top > .right > #signup {
+  background-color: #00798a;
+  color: white;
+}
+
+header > .right > #login:hover {
+  background-color: #00798a;
+  color: white;
+}
+
+header > .top > .right > #signup:hover {
+  background-color: white;
+  color: #00798a;
+  border: 2px solid #00798a;
+}
+
+@media (max-width: 1100px) {
+  header {
+    flex-direction: column;
+  }
+  header > .top {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+  header > .top > .right > button {
+    width: 72px;
+  }
+  .searcher > span {
+    display: none;
+  }
+  .searcher {
+    display: none;
+  }
+  header > .mobile {
+    display: flex;
+    margin-top: 11px;
+    width: 100%;
+    padding: auto;
+  }
+  header > .mobile > input {
+    margin-left: 20px;
+    width: 100%;
+  }
+  header > .mobile > #search-icon {
+    margin-left: 30px;
+  }
+}
 .intro {
   display: flex;
   margin-top: 72px;
@@ -253,6 +313,7 @@ header .nav-right .btn-signup:hover {
 }
 
 .events .top {
+  margin-top: 122px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -278,54 +339,42 @@ header .nav-right .btn-signup:hover {
   margin-left: 8px;
   height: 16px;
 }
-.events .top > a:first-of-type:hover {
-  text-decoration: underline;
+.events .top > a:nth-of-type(2) {
+  color: #00798a;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: auto;
 }
 .events .top > a:last-of-type {
   color: #00798a;
+  background: transparent;
   text-decoration: none;
   font-size: 14px;
   margin-left: auto;
-}
-.events .top > a:last-of-type:hover {
-  text-decoration: underline;
-}
-.events .events .top a:last-of-type {
-  color: #00798a;
-  text-decoration: none;
-  font-size: 14px;
-  margin-left: auto;
-}
-.events .events .top a:last-of-type:hover {
-  text-decoration: underline;
 }
 
-@media screen and (max-width: 1100px) {
-  .top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .top > a {
-    margin-top: 12px;
-  }
-}
-#events-near, #online-events-cards {
+#events-near,
+#online-events-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  column-gap: 36px; /* Отступ только между колонками */
+  column-gap: 36px;
+  /* Отступ только между колонками */
 }
-#events-near .v-card, #online-events-cards .v-card {
+#events-near .v-card,
+#online-events-cards .v-card {
   width: 272px;
   padding-top: 16px;
   margin-bottom: 28px;
 }
-#events-near .v-card > .cover, #online-events-cards .v-card > .cover {
+#events-near .v-card > .cover,
+#online-events-cards .v-card > .cover {
   height: 153px;
   width: 272px;
   border-radius: 8px;
   padding: 5px 10px;
 }
-#events-near .v-card > .cover > .type, #online-events-cards .v-card > .cover > .type {
+#events-near .v-card > .cover > .type,
+#online-events-cards .v-card > .cover > .type {
   width: 125px;
   height: 20px;
   background-color: white;
@@ -334,43 +383,57 @@ header .nav-right .btn-signup:hover {
   display: flex;
   align-items: center;
 }
-#events-near .v-card > .cover > .type > img, #online-events-cards .v-card > .cover > .type > img {
+#events-near .v-card > .cover > .type > img,
+#online-events-cards .v-card > .cover > .type > img {
   margin: 0 4px;
 }
-#events-near .v-card > img, #online-events-cards .v-card > img {
+#events-near .v-card > img,
+#online-events-cards .v-card > img {
   height: 153px;
   width: 272px;
   border-radius: 8px;
   margin-right: 12px;
 }
-#events-near .v-card > .info, #online-events-cards .v-card > .info {
+#events-near .v-card > .info,
+#online-events-cards .v-card > .info {
   margin-top: 12px;
 }
-#events-near .v-card > .info > h4, #online-events-cards .v-card > .info > h4 {
+#events-near .v-card > .info > h4,
+#online-events-cards .v-card > .info > h4 {
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
 }
-#events-near .v-card > .info > .category, #online-events-cards .v-card > .info > .category {
+#events-near .v-card > .info > .category,
+#online-events-cards .v-card > .info > .category {
   color: #707070;
   margin-top: 8px;
 }
-#events-near .v-card > .info > .date, #events-near .v-card > .info > div > .attendees, #events-near .v-card > .info > div > .cost, #online-events-cards .v-card > .info > .date, #online-events-cards .v-card > .info > div > .attendees, #online-events-cards .v-card > .info > div > .cost {
+#events-near .v-card > .info > .date, #events-near .v-card > .info > div > .attendees, #events-near .v-card > .info > div > .cost,
+#online-events-cards .v-card > .info > .date,
+#online-events-cards .v-card > .info > div > .attendees,
+#online-events-cards .v-card > .info > div > .cost {
   display: flex;
   align-items: center;
-  color: #212121;
+  color: #7c6f50;
 }
-#events-near .v-card > .info > .date, #online-events-cards .v-card > .info > .date {
+#events-near .v-card > .info > .date,
+#online-events-cards .v-card > .info > .date {
   margin-top: 8px;
 }
-#events-near .v-card > .info > div, #online-events-cards .v-card > .info > div {
+#events-near .v-card > .info > div,
+#online-events-cards .v-card > .info > div {
   margin-top: 12px;
 }
-#events-near .v-card > .info > .date > img, #events-near .v-card > .info > div > .attendees > img, #events-near .v-card > .info > div > .cost > img, #online-events-cards .v-card > .info > .date > img, #online-events-cards .v-card > .info > div > .attendees > img, #online-events-cards .v-card > .info > div > .cost > img {
+#events-near .v-card > .info > .date > img, #events-near .v-card > .info > div > .attendees > img, #events-near .v-card > .info > div > .cost > img,
+#online-events-cards .v-card > .info > .date > img,
+#online-events-cards .v-card > .info > div > .attendees > img,
+#online-events-cards .v-card > .info > div > .cost > img {
   margin-right: 6px;
 }
 
 .h-card {
+  border-top: 1px solid #d9d9d9;
   display: flex;
   padding-top: 16px;
   margin-bottom: 28px;
@@ -388,11 +451,14 @@ header .nav-right .btn-signup:hover {
   letter-spacing: -0.35px;
 }
 .h-card > .info > h4 {
+  max-width: 604px;
   font-size: 16px;
   font-weight: 500;
   margin-top: 4px;
 }
 .h-card > .info > .category {
+  margin-top: 6px;
+  line-height: 20px;
   color: #707070;
   font-size: 14px;
 }
@@ -529,6 +595,9 @@ header .nav-right .btn-signup:hover {
   margin-top: 24px;
 }
 
+#how-meetup-works {
+  margin-top: 64px;
+}
 #how-meetup-works > .cards {
   display: flex;
   justify-content: space-between;
@@ -634,7 +703,6 @@ header .nav-right .btn-signup:hover {
 #find-out-events {
   display: flex;
   justify-content: space-between;
-  margin-top: 81px;
 }
 #find-out-events .events {
   width: 60%;
@@ -649,7 +717,7 @@ header .nav-right .btn-signup:hover {
 #find-out-events .events > h3::after {
   content: "";
   position: absolute;
-  transform: translateX(-98%);
+  transform: translateX(-96%);
   bottom: 0;
   width: 60px;
   height: 4px;
@@ -658,7 +726,6 @@ header .nav-right .btn-signup:hover {
 #find-out-events .events .selects {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
   margin-top: 12px;
   margin-bottom: 56px;
 }
@@ -689,12 +756,11 @@ header .nav-right .btn-signup:hover {
   font-size: 12px;
 }
 #find-out-events #map h2 {
-  margin-top: 8px;
   color: #000;
 }
 #find-out-events #map .map-container {
   margin-top: 14px;
-  width: 100%;
+  border-radius: 12px;
   height: 285px;
   width: 350px;
   background-image: url("/assets/images/NewYorkMap.jpg");
@@ -752,7 +818,7 @@ button:hover {
   cursor: pointer;
 }
 
-main {
+main > * {
   max-width: 1196px;
   margin: 0px auto;
 }

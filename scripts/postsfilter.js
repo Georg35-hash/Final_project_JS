@@ -69,6 +69,11 @@ const eventsStore = [
 
 ];
 
+
+
+
+
+
 // Найдем кнопку сброса и все select элементы
 const reseterButton = document.querySelector('.reseter');
 const selects = document.querySelectorAll('.selects select');
@@ -94,17 +99,17 @@ function filterEvents() {
     const dayFilter = document.getElementById('filterDay').value;
 
     const filteredEvents = eventsStore.filter(event => {
-        const matchesCategory = categoryFilter === 'all' || event.category.toLowerCase() === categoryFilter;
-        const matchesType = typeFilter === 'all' || event.type.toLowerCase() === typeFilter;
+        const category = categoryFilter === 'all' || event.category.toLowerCase() === categoryFilter;
+        const type = typeFilter === 'all' || event.type.toLowerCase() === typeFilter;
 
         // Фильтрация расстояния
-        const matchesDistance = distanceFilter === 'all' || event.distance <= parseFloat(distanceFilter);
+        const distance = distanceFilter === 'all' || event.distance <= parseFloat(distanceFilter);
 
         // Парсим дату из dayFilter для сравнения
-        const matchesDate = !dayFilter || dayFilter === 'all' ||
+        const date = !dayFilter || dayFilter === 'all' ||
             new Date(dayFilter).getTime() === event.date.getTime();
 
-        return matchesCategory && matchesType && matchesDistance && matchesDate;
+        return category && type && distance && date;
     });
 
     renderEvents(filteredEvents);
@@ -150,6 +155,7 @@ function renderEvents(events) {
             <div class="h-card">
                 <img src="${event.image}" alt="cover">
                 <div class="info">
+                 <div class="line"></div>
                     <p class="date">${formattedString}</p>
                     <h4>${event.title}</h4>
                     <p class="category">${event.category} (${event.distance} km)</p>
@@ -164,3 +170,9 @@ function renderEvents(events) {
 
 // Изначальный рендер всех событий
 renderEvents(eventsStore);
+
+
+
+
+
+
